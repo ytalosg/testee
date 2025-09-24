@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Imobil - Imobiliária</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts: Montserrat for a modern real estate look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+            color: #222;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        h2 {
+            margin-top: 2rem;
+            color: #2980b9;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .comparativo {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #ecf0f1;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        .comparativo span {
+            font-weight: 700;
+            color: #27ae60;
+        }
+        /* Carousel styles */
+        .carousel-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 0;
+            overflow: hidden;
+            opacity: 0.18;
+        }
+        .carousel {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        .carousel img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            transition: opacity 1s;
+            opacity: 0;
+        }
+        .carousel img.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-bg">
+        <div class="carousel">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Casa construída" class="active">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80" alt="Casa em construção">
+            <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80" alt="Terreno">
+        </div>
+    </div>
+    <header>
+        <h1>Imobil</h1>
+        <p>Sua imobiliária de confiança</p>
+    </header>
+    <div class="container">
+        <h2>Casas</h2>
+        <div class="comparativo">
+            <div>
+                Casa 3 quartos, 2 banheiros, 1 suíte<br>
+                Bairro Central
+            </div>
+            <span>R$ 450.000</span>
+        </div>
+        <div class="comparativo">
+            <div>
+                Casa 2 quartos, 1 banheiro<br>
+                Bairro Jardim
+            </div>
+            <span>R$ 320.000</span>
+        </div>
+        <div class="comparativo">
+            <div>
+                <strong>Comparativo:</strong> Casa Central tem suíte e localização privilegiada, valor 40% maior que Jardim.
+            </div>
+        </div>
+
+        <h2>Minha Casa Minha Vida</h2>
+        <div class="comparativo">
+            <div>
+                Casa popular 2 quartos<br>
+                Bairro Nova Esperança
+            </div>
+            <span>R$ 180.000</span>
+        </div>
+        <div class="comparativo">
+            <div>
+                Casa popular 3 quartos<br>
+                Bairro Nova Esperança
+            </div>
+            <span>R$ 210.000</span>
+        </div>
+        <div class="comparativo">
+            <div>
+                <strong>Comparativo:</strong> 3 quartos por apenas R$ 30.000 a mais, ideal para famílias maiores.
+            </div>
+        </div>
+
+        <h2>Terrenos</h2>
+        <div class="comparativo">
+            <div>
+                Terreno 300m²<br>
+                Bairro Residencial
+            </div>
+            <span>R$ 120.000</span>
+        </div>
+        <div class="comparativo">
+            <div>
+                Terreno 500m²<br>
+                Bairro Residencial
+            </div>
+            <span>R$ 180.000</span>
+        </div>
+        <div class="comparativo">
+            <div>
+                <strong>Comparativo:</strong> O terreno maior tem melhor custo por metro quadrado.
+            </div>
+        </div>
+    </div>
+    <script>
+        // Simple carousel background
+        const images = document.querySelectorAll('.carousel img');
+        let idx = 0;
+        setInterval(() => {
+            images[idx].classList.remove('active');
+            idx = (idx + 1) % images.length;
+            images[idx].classList.add('active');
+        }, 3500);
+    </script>
+</body>
+</html>
